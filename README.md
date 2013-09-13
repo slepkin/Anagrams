@@ -20,3 +20,8 @@ why this is; maybe space is the issue.
 The dictionary doesn't need to be sorted, and it is permitted to have duplicate
 words (without being duplicated in the count or the list). Capitalization is
 ignored, and any words with accents or other irregular characters are ignored.
+
+###TODO:
+
+- [ ] Write unit tests
+- [ ] Refactor to use more functions
