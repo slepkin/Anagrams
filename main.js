@@ -1,22 +1,6 @@
 var fs = require('fs');
+var tools = require('./tools.js');
 var DICTIONARY = fs.readFileSync('american-english',"utf-8").split("\n");
-
-function incrementStringAt(str,index) {
-  var output = str.slice(0,index);
-  output += String(parseInt(str[index])+1);
-  output += str.slice(index+1);
-  return output;
-}
-
-//We interpret the character count as a string of 26 one-digits number.
-//This presupposes that no word contains more than 9 instances of any one letter
-function charCount(str) {
-  var count = "00000000000000000000000000"
-  for(var i=0; i<str.length; i++) {
-    count = incrementStringAt(count, str.charCodeAt(i)-97);
-  }
-  return count;
-}
 
 //We will track the disjoint sets of anagrams as a set of sets, represented
 //as an objects whose values are objects.
@@ -25,10 +9,11 @@ var anagram_count = 0;
 
 for(i in DICTIONARY){
   if(i % 10000 == 0){console.log("Processing word #",i)}
+
   var word = DICTIONARY[i].toLowerCase();
   if(word.length == 1 || /[^a-z]/.test(word)){continue;}
 
-  var key = charCount(word);
+  var key = tools.charCount(word);
   if(typeof anagram_set[key] == 'undefined'){
     anagram_count += 1;
     anagram_set[key] = new Object();
@@ -54,4 +39,4 @@ for(i in ordered_keys){
 }
 
 fs.writeFileSync('out.txt', output_str);
-console.log(anagram_count, " total disjoint anagram classes")
+console.log(anagram_count, ' total disjoint anagram classes')
