@@ -22,5 +22,6 @@ words (without being duplicated in the count or the list). Capitalization is
 ignored, and any words with accents or other irregular characters are ignored.
 
 ###TODO:
-[] Write unit tests
-[] Refactor to use more functions
+
+- [ ] Write unit tests
+- [ ] Refactor to use more functions
