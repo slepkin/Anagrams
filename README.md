@@ -7,7 +7,7 @@ This is a JavaScript script which, given a line-separated dictionary:
 order of the size of each class, seperated by line.
 
 ```
-node anagram.js
+node main.js
 ```
 
 ### Notes
