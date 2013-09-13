@@ -1,4 +1,0 @@
-for(var i=0;i<10000;i++){
-  console.log(/'s$/.test("fred's"));
-  console.log("fred's".slice(-2)=="'s");
-}
