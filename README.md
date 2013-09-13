@@ -21,7 +21,7 @@ The dictionary doesn't need to be sorted, and it is permitted to have duplicate
 words (without being duplicated in the count or the list). Capitalization is
 ignored, and any words with accents or other irregular characters are ignored.
 
-###TODO:
-
-- [ ] Write unit tests
-- [ ] Refactor to use more functions
+This is written synchronously, since I didn't see a way that writing it 
+asynchronously would speed anything up (running in node, not a browser). I find 
+synchronous code to be a bit more readable, and typically requires less deep 
+nesting.
