@@ -31,7 +31,7 @@ var ordered_keys = Object.keys(anagram_set).slice(1).sort(
   function(key1,key2){return anagram_set[key2]['size'] - anagram_set[key1]['size'];}
 );
 
-
+//Create out.txt by joining keys of each anagram class, excluding 'size'
 var output_str = ""
 for(i in ordered_keys){
   output_str += Object.keys(anagram_set[ordered_keys[i]]).slice(1).join(",");
